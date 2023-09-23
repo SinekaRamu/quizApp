@@ -13,12 +13,16 @@
         <h1>Quiz App</h1>
         <form id="myGroupSelectForm">
           <label for="selectCategory">Choose Your Category</label>
-          <select id="selectCategory" name="Categories"></select>
+          <select id="selectCategory" name="Categories" required>
+            <option selected disabled>Categories</option>
+          </select>
           <button type="submit" id="proceed">proceed</button>
         </form>
       </section>
 
-      <section id="Questions"></section>
+      <section id="Questions">
+        <form id="question-form"></form>
+      </section>
     </main>
   </body>
 </html>
