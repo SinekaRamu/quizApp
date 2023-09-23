@@ -6,3 +6,41 @@
   font-family: "poppins", sans-serif;
   box-sizing: border-box;
 }
+
+body {
+  padding: 10px;
+  background-color: #f5ebeb;
+}
+
+h1 {
+  padding-bottom: 20px;
+  text-align: center;
+}
+
+button {
+  margin: 0 auto;
+  padding: 5px 10px;
+  font-size: 16px;
+  color: #fff;
+  background-color: #867070;
+  border: none;
+  border-radius: 6px;
+}
+
+#myGroupSelectForm {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  background-color: #e4d0d0;
+  border-radius: 10px;
+}
+
+#selectCategory {
+  margin: 10px auto;
+  padding: 5px 0;
+  background-color: #d5b4b4;
+  border: none;
+  border-radius: 8px;
+  outline: none;
+}
