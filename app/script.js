@@ -143,13 +143,13 @@ function displayQuestionCard(qn) {
   optionGrid.setAttribute("class", "grid-box");
 
   let option = qn["options"];
-  console.log(option);
   for (let i = 0; i < option.length; i++) {
     const op = option[i];
     const optionDiv = document.createElement("div");
     const radioBtn = document.createElement("input");
     radioBtn.type = "radio";
     radioBtn.name = qn["id"] + "qnCode";
+
     radioBtn.id = op["id"] + "btn";
     radioBtn.value = op["text"];
     const label = document.createElement("label");
@@ -166,4 +166,12 @@ function displayQuestionCard(qn) {
 
   fieldset.append(legend, optionGrid, displayAnswer);
   return fieldset;
+}
+
+function radioChecked() {
+  const name = document.getElementsByName(qn["id"] + "qnCode");
+
+  for (i = 0; i < name.length; i++) {
+    if (name[i].checked) console.log("name.value");
+  }
 }
