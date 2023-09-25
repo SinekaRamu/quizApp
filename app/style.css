@@ -85,6 +85,12 @@ input[type="radio"] {
   color: #867070;
 }
 
-.submitBtn {
-  margin-left: 10px;
+#submitBtn {
+  float: right;
+}
+
+.ansDiv {
+  margin-bottom: 10px;
+  text-align: right;
+  color: #867070;
 }
