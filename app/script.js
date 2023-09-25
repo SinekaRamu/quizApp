@@ -93,34 +93,42 @@ function getFromLocalSorage() {
   return category;
 }
 
-function checkStorage() {
-  const storedCategory = getCategoryFromStorage();
-  if (storedCategory) {
-    updateQuizListUI(storedCategory);
-    console.log(storedCategory);
-  }
-}
-// checkStorage();
+// function checkStorage() {
+//   const storedCategory = getFromLocalSorage();
+//   console.log(storedCategory.id);
+//   if (storedCategory) {
+//     openQuestions(storedCategory);
+//   } else {
+//     setToLocalStorage("");
+//   }
+// }
+
 // Get the selected value and move to the respected page when the button is clicked
 document.getElementById("proceed").addEventListener("click", function (e) {
   e.preventDefault();
-  clearApp();
   const selectedindex = state.categories.findIndex(
     (cat) => cat.value == groupSelect.value
   );
   openQuestions(selectedindex);
+  setToLocalStorage(selectedindex);
 });
 
+const storedCategory = getFromLocalSorage();
+console.log(storedCategory.id);
+if (storedCategory) {
+  openQuestions(storedCategory);
+}
 function clearApp() {
   questionBox.innerHTML = " ";
 }
 
 function openQuestions(selectedCat) {
-  console.log(selectedCat);
+  clearApp();
   quizCatBox.style.display = "none";
   questionBox.style.visibility = "inherit";
   let selectedcategory = state.categories[selectedCat];
-  setToLocalStorage(selectedcategory);
+
+  console.log(selectedcategory);
   contentDiv();
   ButtonDiv();
   questionCategory(selectedcategory);
@@ -137,6 +145,7 @@ function contentDiv() {
 }
 
 function questionCategory(cat) {
+  console.log(cat);
   const app = document.querySelector("#app");
   const h1 = document.createElement("h2");
   h1.innerText = cat.name;
@@ -160,7 +169,7 @@ function ButtonDiv() {
   backBtn.addEventListener("click", function () {
     questionBox.style.visibility = "hidden";
     quizCatBox.style.display = "block";
-    // setToLocalStorage("");
+    setToLocalStorage("");
   });
   buttonDiv.append(backBtn, submitBtn);
 }
